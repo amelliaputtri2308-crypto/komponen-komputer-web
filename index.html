@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Mengenal Komponen Komputer</title>
+
+    <style>
+        body {
+            font-family: Arial;
+            background: #f3f6fb;
+            margin: 0;
+            color: #172033;
+        }
+
+        header {
+            background: #102a43;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .container {
+            padding: 20px;
+            display: grid;
+            grid-template-columns:
+            repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px #ccc;
+        }
+
+        .card h2 {
+            color: #2563a6;
+        }
+
+        input {
+            padding: 12px;
+            width: 80%;
+            margin: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Mengenal Komponen Komputer</h1>
+    <p>Belajar fungsi dan bagian-bagian komputer</p>
+</header>
+
+<input type="text" id="search"
+placeholder="Cari komponen komputer...">
+
+<div class="container" id="daftar">
+
+    <div class="card">
+        <h2>Processor (CPU)</h2>
+        <p>Berfungsi mengolah data
+        dan menjalankan perintah komputer.</p>
+    </div>
+
+    <div class="card">
+        <h2>RAM</h2>
+        <p>Menyimpan data sementara
+        ketika komputer digunakan.</p>
+    </div>
+
+    <div class="card">
+        <h2>Harddisk / SSD</h2>
+        <p>Menyimpan data dan file
+        secara permanen.</p>
+    </div>
+
+    <div class="card">
+        <h2>Motherboard</h2>
+        <p>Menghubungkan seluruh
+        komponen komputer.</p>
+    </div>
+
+    <div class="card">
+        <h2>Monitor</h2>
+        <p>Menampilkan gambar dan
+        informasi dari komputer.</p>
+    </div>
+
+    <div class="card">
+        <h2>Keyboard</h2>
+        <p>Memasukkan huruf, angka,
+        dan perintah.</p>
+    </div>
+
+    <div class="card">
+        <h2>Mouse</h2>
+        <p>Menggerakkan pointer
+        dan memilih objek.</p>
+    </div>
+
+    <div class="card">
+        <h2>Power Supply</h2>
+        <p>Menyalurkan daya listrik
+        ke komponen komputer.</p>
+    </div>
+
+</div>
+
+<script>
+const search = document.getElementById("search");
+const cards = document.querySelectorAll(".card");
+
+search.addEventListener("input", function() {
+    let keyword = search.value.toLowerCase();
+
+    cards.forEach(card => {
+        card.style.display =
+        card.innerText.toLowerCase()
+        .includes(keyword) ? "block" : "none";
+    });
+});
+</script>
+
+</body>
+</html>
